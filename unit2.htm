@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><title>Unit 2</title>
+<link rel="stylesheet" href="css/math.css">
+<style>#canvas{background-color:#888}</style>
+    
+</head><body>
+
+<center id="h1">Unit 2: 2-D Motion</center>
+
+<div class="h2">Summary</div> 
+<div class="text">
+Constant acceleration<span>&#8869;</span>velocity: constant speed, circular motion
+</div>
+
+<div class="h2">Definitions</div>    
+<div class="text">
+<span class="padded"><span>&#238;</span>/j/k (hat notation) represents vector components</span>
+<span class="padded">T (period, seconds)=2<span>&#960;</span>r/v</span>
+</div>
+
+<div class="h2">Special Cases</div>
+<div class="text">
+-None
+</div>
+
+<div class="h2">Derivations</div>
+<div class="text padded">
+Conditions: constant acceleration, constant radius, velocity perpendicular
+<br>Let: s=r
+<br>Let vector r=rcos(<span>&#920;)</span>&#238;+rsin(<span>&#920;</span>)j
+<br>Acceleration of magnitude a: vector a=-acos(<span>&#920;)</span>&#238;-rsin(<span>&#920;</span>)j
+<br>Antiderivative: vector v=-a/<span>&#969;sin(</span>&#920;)<span>&#238;+a/</span>&#969;cos(<span>&#920;</span>)j
+<br>Since perpendicular: vector v=-vsin(<span>&#920;)</span>&#238;+vcos(<span>&#920;</span>)j
+<br>-vsin(<span>&#920;)</span>&#238;+vcos(<span>&#920;)j=-a/</span>&#969;sin(<span>&#920;)<span>&#238;+a/<span>&#969;cos(</span>&#920;)j
+<br>v=a/<span>&#969;</span>
+<br>v=a/(v/r)
+<br>v<sup>2</sup>/r=a
+<br><b>&#8756;a<sub>c</sub>=v<sup>2</sup>/r</b>
+<br>Conditions: height=0, time!=0
+<br>Let initial velocity=v=vcos(<span>&#920;)</span>&#238;+vsin(<span>&#920;</span>)j, R=final range
+<br>0=-gt<sup>2</sup>/2+vsin(<span>&#920;</span>)*t+0
+<br>gt<sup>2</sup>/2=vsin(<span>&#920;</span>)*t
+<br>gt/2=vsin(<span>&#920;</span>)
+<br>t=2vsin(<span>&#920;</span>)/g
+<br>vcos(<span>&#920;</span>)*t=R
+<br>vcos(<span>&#920;)2vsin(</span>&#920;)=R
+<br><b>v<sup>2</sup>sin(2<span>&#920;</span>)/g=R</b>
+    
+</div>
+    
+<div class="h2">Lab</div>
+<div class="text">
+To add two vectors, either 1) draw the vectors arrow-to-tail and draw the resultant, spanning to the extremities of the chain, 
+or 2) for two vectors, let their tail points coincide, complete the parallelogram, and draw the resultant from the common tail
+point to the opposite vertex
+<center>
+<canvas id="canvas" height="200" width="200">Get Chrome...</canvas>
+</center> 
+</div>
+    
+</body>
+</html>

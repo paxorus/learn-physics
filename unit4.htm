@@ -1,0 +1,114 @@
+<!doctype html>
+<html><head><title>Unit 4</title>
+<link rel="stylesheet" href="css/math.css">
+<link rel="stylesheet" href="css/unit4.1.css">
+<style>
+#canvas{background-color:#FFF;height:500px;}
+</style>
+<script src="js/jquery.js"></script>    
+    
+</head><body>
+
+<center id="h1">Unit 4: Work & Energy</center>
+
+<div class="h2">Summary</div>
+<div class="text">
+Conservation of energy: total initial joules=total final joules
+<br>Open system: work done from outside, included in initial=final equation
+</div>
+
+<div class="h2">Definitions</div>    
+<div class="text">
+<span class="padded">W (work, joules)=<span>&#8747;F dx</span></span>
+<span class="padded">&#916;K (kinetic)=W</span>
+<span class="padded">Hooke's Law: F=-kx</span>
+<span class="padded">U: potential energy</span>
+<span class="padded">U<sub>gravity </sub>=mgh</span>
+<span class="padded">U<sub>spring</sub>=kx<sup>2</sup></span>
+<span class="padded">P (power, watts)=dW/dt</span>
+
+</div>
+
+<div class="h2">Special Cases</div>
+<div class="text">
+<!---Maintaining circular motion: m*a<sub>c</sub>&#62;f-->
+-U is the result of a force, not a tendency on its own to accelerate. An object falls because of gravity, not because U tries to release itself.
+U is a theoretical concept invented to make the conservation of energy work; the addition of a force spontaneously increases the U of the receiving
+object to stay in accordance with the conservation.
+<br>-If the displacement is zero, zero work is done.
+<br>-Work is the transfer of energy. As it may add to K, it must be subtracting from P or another form.
+</div>
+
+<div class="h2">Derivations</div>
+<div class="text padded">
+Conditions:F constant
+<br>P=<sup>dW</sup>/<sub>dt</sub>
+<br>P=<sup>d</sup>/<sub>dt</sub>(<span>&#8747; F dx)</span>
+<br>P=F*<sup>d</sup>/<sub>dt</sub>(<span>&#8747;dx)</span>
+<br>P=F*<sup>dx</sup>/<sub>dt</sub>
+<br><b>P=F*v</b>
+</div>
+
+<div class="h2">Lab</div>
+<div class="text" style="-webkit-user-select:none">
+Distances are measured from the center of mass of the arrow. The ground is level. The bowstring follows Hooke's law. 
+All K is released as sound. Air resistance is negligible.
+
+<center>
+
+<button type="button" onclick="stahp()">Pause</button>
+<button type="button" onclick="restart()">Restart</button>
+<div id="canvas">
+<img src="images/arrow.png" id="arrow">
+<img src="images/archer.jpg" id="archer">
+</div>
+</center>
+<div style="background-color:#CCF;height:50px;width:200px;position:relative"></div>
+<div style="background-color:brown;height:500px;width:50px" id="wall"></div>
+<img src="images/cloud.png" id="cloud1">
+<img src="images/cloud.png" id="cloud2">
+<img src="images/cloud.png" id="cloud3">
+</div>
+<div style="-webkit-user-select:none;cursor:default;font-size:18px;position:absolute;top:1300px">
+<ol>
+<li>10 dB=1 B and I (intensity)=10<sup>B</sup>. Find the max I produced by the arrow striking the wall.</li>
+<li>It is known that <span>&#8747;<sub>0</sub><sup>0.5</sup></span>I dt=something with max I=something. Rescale the definite integral
+to your answer in 1.</li>
+<li>Since I (intensity)=P<span>&#960;r<sup>2</sup>, </span>&#960;r<sup>2</sup>*<span>&#8747;I dt=W. If r=0.3 meters=distance between the point of collision
+and the recording <br>device, find W in Joules, the energy with which the arrow struck the wall.</span>
+<li>Find the v<sub>f</sub> of the arrow just before the collision.</li>
+<li>Find the total energy (K+U) of the arrow during its flight.</li>
+<li>Using your answer to 5, find the work done by the archer on the arrow.</li>
+<li>Using your answer to 6, what was the initial velocity of the arrow? What angle was the arrow shot at? 
+What is the <br>Hooke's law constant of the bowstring?</li>
+</ol>  
+</div>
+</body>
+
+
+<script>
+function stahp() {
+if($("#archer").css("WebkitAnimationPlayState")=="running"){
+    $("#archer").css("WebkitAnimationPlayState","paused");
+    $("#arrow").css("WebkitAnimationPlayState","paused");
+    $("#cloud1").css("WebkitAnimationPlayState","paused");
+    $("#cloud2").css("WebkitAnimationPlayState","paused");
+    $("#cloud3").css("WebkitAnimationPlayState","paused");
+    $("#wall").css("WebkitAnimationPlayState","paused");    
+}
+else{
+    $("#archer").css("WebkitAnimationPlayState","running");
+    $("#arrow").css("WebkitAnimationPlayState","running");
+    $("#cloud1").css("WebkitAnimationPlayState","running");
+    $("#cloud2").css("WebkitAnimationPlayState","running");
+    $("#cloud3").css("WebkitAnimationPlayState","running");
+    $("#wall").css("WebkitAnimationPlayState","running"); 
+}
+}
+function restart() {
+    var ids=["cloud1","cloud2","cloud3","wall","archer","arrow"];
+    for(var a=0;a<=5;a++){var poop=$("#"+ids[a]);poop.before(poop.clone(true)).remove()}
+}
+</script>
+    
+</html>

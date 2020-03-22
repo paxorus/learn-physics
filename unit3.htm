@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><title>Unit 3</title>
+<link rel="stylesheet" href="css/math.css">
+<style>
+#canvas{background-color:#088}
+#disp,#vel{position:absolute;top:740px;left:50%;color:#0AF;font-size:36px;margin-left:-170px;}
+#vel{top:790px;margin-left:-110px;}
+</style>
+<script src="js/jquery.js"></script>    
+</head><body>
+
+<center id="h1">Unit 3: Newton's Laws</center>
+
+<div class="h2">Summary</div>
+<div class="text">
+A free-body diagram shows all of the forces acting on one object.
+<br>The forces due to air resistance or friction cannot be greater than the opposing net force.
+</div>
+
+<div class="h2">Definitions</div>    
+<div class="text">
+Newton's Laws of Motion<br>
+<span class="padded">1. Inertia is the property of matter to resist acceleration- in the case of linear motion, simply mass.</span>
+<br><span class="padded">2. F (force, Newtons)=ma</span>
+<span class="padded">3. Force is a vector. F<sub>BA</sub>=-F<sub>BA</sub></span>
+<br><span class="padded">T (tension)=F<sub>string-object</sub></span>
+<span class="padded">N (normal)=F<sub>surface-object</sub></span>
+<span class="padded">w (weight)=m*g=F<sub>Earth-object</sub></span>
+<br><span class="padded">&#956;: coefficient of friction</span>
+<span class="padded">f (friction, Newtons)=<span>&#956;</span>N</span>
+</div>
+
+<div class="h2">Special Cases</div>
+<div class="text">
+<!---Maintaining circular motion: m*a<sub>c</sub>&#62;f-->
+-Due to our moon's size, its surface is a vacuum.
+<br>-An object slows to a stop due to a force: mv<sub>1</sub><sup>2</sup>+2Fd=0
+<br>-Air resistance: as long as there is acceleration, v will increase so drag (F<sub>D</sub>) will increase. 
+Once mg=F<sub>D</sub>, F<sub>net</sub>=0 so velocity remains constant and F<sub>D</sub> remains constant.
+<br>-<span>&#956;<sub>static</sub> of friction is always greater than or equal to </span>&#956;<sub>kinetic</sub>. 
+</div>
+
+<div class="h2">Derivations</div>
+<div class="text padded">
+N/A
+</div>
+
+<div class="h2">Lab</div>
+<div class="text" style="-webkit-user-select:none">
+Click to attract the particle. Note that the passage of time is 50:1.
+<div style="position:absolute;top:700px;left:25px;width:270px;-webkit-user-select:none">
+<br>&#181;<sub>s</sub>: <input max=2 min=0 value=.5 step=.01 id="micros" type="number">
+&#181;<sub>k</sub>: <input max=2 min=0 value=.5 step=.01 id="microk" type="number">
+<br>Attract<sub>click</sub> (m/s<sup>2</sup>): <input min=0 max=500 value=6 id="k" type="number">
+<br>g (m/s<sup>2</sup>): <input min=0 max=50 value=10 id="g" type="number">
+<br>mass (kg): <input min=0 max=500 value=1 type="number">
+</div>
+<div style="position:absolute;top:700px;right:25px;width:270px;-webkit-user-select:none;cursor:default;font-size:18px">
+1. Which constant has no impact on how the particle moves? Pay attention to units!
+2. Click and hold in a direction perpendicular to the particle's current velocity. What motion do you notice?
+(Adjust constants for best result.)
+3. Derive an equation for the particle's acceleration vector.
+4. When does <span>&#181;</span><sub>s</sub> have no effect (an inequality) on how the particle moves?
+</div>
+<center>
+<span id="disp"></span>
+<span id="vel"></span>
+<canvas id="canvas" onmousedown="down(event)" onmousemove="move(event)" onmouseup="up()" height="500" width="500">Get Chrome...</canvas> 
+</center>
+</div>
+
+<script src="js/unit3.1.js"></script>
+</body>
+</html>

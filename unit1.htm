@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><title>Unit 1</title>
+<link rel="stylesheet" href="css/math.css">
+<style>#canvas{background-color:#888}</style>
+    
+</head><body>
+
+<center id="h1">Unit 1: 1-D Motion</center>
+
+<div class="h2">Summary</div>
+<div class="text">
+In 1-D, the only two directions are + and -, so scalars at a given time are simply the absolute value of the vectors.
+<br>At rest means the velocity (and therefore speed) is zero.
+<br>Accelerating simply means a change in velocity, not just an increase.
+<br>To calculate distance/displacement from a velocity graph, use the net area under the function.
+</div>
+
+<div class="h2">Definitions</div>    
+<div class="text">
+<span class="padded">v=<sup>ds</sup>/<sub>dt</sub></span> 
+<span class="padded">a=<sup>dv</sup>/<sub>dt</sub></span>
+<span class="padded"><span class="bar">v</span>=<sup>&#916;s</sup>/<sub>&#916;t</sub></span>
+<span class="padded"><span class="bar">a</span>=<sup>&#916;v</sup>/<sub>&#916;t</sub></span>    
+</div>
+
+<div class="h2">Special Cases</div>
+<div class="text">
+-Gravity: downwards acceleration: -32 ft/s/s or -10 m/s/s (-9.80665 for True Honors)
+<br>-Initial v zero: s=at<sup>2</sup>/2
+<br>-Initial s/t zero: <span>&#916;</span>s=s or <span>&#916;</span>t=t...cut down on fluff when possible
+</div>
+
+<div class="h2">Derivations</div>
+<div class="text padded">
+Constant acceleration condition: a=<span class="bar">a</span>
+<br>a=<sup>&#916;v</sup>/<sub>&#916;t</sub></span>
+<br>a=(v<sub>f</sub>-v<sub>o</sub>)/t
+<b><br>at+v<sub>o</sub>=v<sub>f</sub></b>
+<br>&#8747;(at+v<sub>o</sub>)dt=<span>&#8747;(v)dt</span>
+<br>&#8747;(at+v<sub>o</sub>)dt=<span>&#8747;(<sup>ds</sup>/<sub>dt</sub></span>)dt</span>
+<b><br>at<sup>2</sup>/2+v<sub>o</sub>t+s<sub>o</sub>=s</b>
+<br>at<sup>2</sup>/2+v<sub>o</sub>t=<span>&#916;</span>s
+<br>at/2+v<sub>o</sub>=<sup>&#916;s</sup>/<sub>&#916;t</sub>
+<br>(at+2v<sub>o</sub>)/2=<span class="bar">v</span>
+<b><br>(v<sub>f</sub>+v<sub>o</sub>)/2=<span class="bar">v</span></b>
+<br>(v<sub>f</sub>-v<sub>o</sub>)/t*(v<sub>f</sub>+v<sub>o</sub>)/2=a<span class="bar">v</span>
+<br>(v<sub>f</sub>-v<sub>o</sub>)*(v<sub>f</sub>+v<sub>o</sub>)=2a<span class="bar">v</span>t
+<br>v<sub>f</sub><sup>2</sup>-v<sub>o</sub><sup>2</sup>=2as
+<b><br>v<sub>f</sub><sup>2</sup>=v<sub>o</sub><sup>2</sup>+2as</b>   
+</div>
+    
+<div class="h2">Lab</div>
+<div class="text">
+Click Run to create a stop-action image of a particle, then answer the questions below. The data collection truncates once the particle's distance from the origin
+is greater than zero.
+<center><canvas height="100" width="500" id="canvas">Get Chrome...</canvas>
+<br>s: <input id="dist" type="text">
+v: <input id="vel" type="text">
+a: <input id="acc" type="text">
+<br><button type="button" onclick="run()">Run</button>
+</center>
+<ol>
+<li>Explain in plain terms what it means for each of the three values to be negative.</li>
+<li>For velocity to be constant is for acceleration to be...</li>
+<li>Why does the particle somtimes change direction? Which value is the best indicator of that point in time?</li>
+<li>What is the total distance the particle travels if it does not change direction? What if it does change direction? Why should the two answers be different?</li>
+<li>Which value or values will cause the particle to not move at all?</li>
+<li>Calculate the time in which the particle goes out of bounds if velocity is constant.</li>
+<li>Calculate the time in which the particle goes out of bounds if velocity is increasing and if velocity is decreasing. Why should the two answers be the same?</li>
+<li>If we graph s vs. time, when is the graph a line? When it isn't, what shape does the graph take on?</li>
+</ol>
+
+
+    
+<script src="js/unit1.1.js"></script>
+</div>
+    
+    
+    
+</body>
+</html>

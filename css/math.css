@@ -1,0 +1,10 @@
+body{background-image:url('../images/selfie.jpg');font-family:Verdana}
+#h1{height:60px;background-color:#99F;font-size:45px}
+.h2{height:52px;background-color:#AAF;font-size:39px}
+.text{background-color:#CCF;font-size:20px}    
+.padded{padding:0 50px}
+.bar{text-decoration:overline}
+a:link{color:#080}
+a:visited{color:#00F}
+a:hover{color:#B60}
+a:active{color:#B60}

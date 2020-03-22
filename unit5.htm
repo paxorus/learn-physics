@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><title>Unit 5</title>
+<link rel="stylesheet" href="css/math.css">
+<style>
+#canvas{background-color:#088}
+#disp,#vel{position:absolute;top:740px;left:50%;color:#0AF;font-size:36px;margin-left:-170px;}
+#vel{top:790px;margin-left:-110px;}
+</style>
+<script src="js/jquery.js"></script>    
+</head><body>
+
+<center id="h1">Unit 5: Momentum</center>
+
+<div class="h2">Summary</div>
+<div class="text">
+Momentum is conserved in a collision.
+    
+</div>
+
+<div class="h2">Definitions</div>    
+<div class="text">
+<span class="padded">p (momentum, N*s)=mv</span>
+<span class="padded">Elastic collision: K conserved</span>
+<span class="padded">J (impulse, N*s)=<span>&#8747;F dt</span>=F<sub>average</sub>t</span>
+</div>
+
+<div class="h2">Special Cases</div>
+<div class="text">
+-For a ricochet, use J=<span>&#916;p so F<sub>avg</sub>t=m</span>&#916;v. Realize that both velocities cannot have the same sign.
+<br>-In an elastic head-on collision between two particles of equal mass, the two particles exchange velocities. Newton's cradle works on this principle.
+<br>-When one walks forward, the Earth's rotational velocity lowers by a negligible fraction.
+<br>-When two masses combine into one, use the fact that the final mass is the sum of the initial two.
+</div>
+
+<div class="h2">Derivations</div>
+<div class="text padded">
+Let masses of m<sub>1</sub> and m<sub>2</sub> collide elastically and head-on (linearly), with initial velocites a and b and final velocities c and d, respectively.
+Kinetic energy is conserved: <br>m<sub>1</sub>v<sub>a</sub><sup>2</sup>+m<sub>2</sub>v<sub>b</sub><sup>2</sup>=m<sub>1</sub>v<sub>c</sub><sup>2</sup>+m<sub>2</sub>v<sub>d</sub><sup>2</sup> &#8594;
+m<sub>1</sub>v<sub>a</sub><sup>2</sup>-m<sub>1</sub>v<sub>c</sub><sup>2</sup>=m<sub>2</sub>v<sub>d</sub><sup>2</sup>-m<sub>2</sub>v<sub>b</sub><sup>2</sup>
+<br>m<sub>1</sub>v<sub>a</sub>+m<sub>2</sub>v<sub>b</sub>=m<sub>1</sub>v<sub>c</sub>+m<sub>2</sub>v<sub>d</sub> &#8594;
+m<sub>1</sub>v<sub>a</sub>-m<sub>1</sub>v<sub>c</sub>=m<sub>2</sub>v<sub>d</sub>-m<sub>2</sub>v<sub>b</sub>
+<br>&#8756;<b>v<sub>a</sub>+v<sub>c</sub>=v<sub>d</sub>+v<sub>b</sub></b>
+<br>m<sub>1</sub>v<sub>c</sub>+m<sub>2</sub>v<sub>d</sub>-m<sub>1</sub>v<sub>a</sub>=m<sub>2</sub>v<sub>b</sub>
+<br>m<sub>1</sub>v<sub>c</sub>+m<sub>2</sub>(v<sub>b</sub>+v<sub>d</sub>-v<sub>a</sub>)-m<sub>1</sub>v<sub>a</sub>=2m<sub>2</sub>v<sub>b</sub>-m<sub>2</sub>v<sub>a</sub>
+<br>m<sub>1</sub>v<sub>2</sub>+m<sub>2</sub>v<sub>c</sub>-m<sub>1</sub>v<sub>a</sub>-m<sub>2</sub>v<sub>a</sub>=2m<sub>2</sub>v<sub>b</sub>-2m<sub>2</sub>v<sub
+>a</sub>
+<br>(m<sub>1</sub>+m<sub>2</sub>)(v<sub>c</sub>-v<sub>a</sub>)=2m<sub>2</sub>(v<sub>b</sub>-v<sub>a</sub>)
+<br><b>&#8756;<sup>v<sub>c</sub>-v<sub>a</sub></sup>/<sub>v<sub>b</sub>-v<sub>a</sub></sub>=<sup>2m<sub>2</sub></sup>/<sub>m<sub>1</sub>+m<sub>2</sub></sub></b>
+<br>J=&#8747;F dt=m*<span>&#8747;<sub>o</sub><sup>t</sup>a dt=m*(v)|<sub>o</sub><sup>t</sup>=m*(v<sub>f</sub>-v<sub>o</sub>)=m</span>&#916;v
+<br><b>&#8756;J=<span>&#916;</span>p</b>
+    
+    
+</div>
+
+<div class="h2">Lab</div>
+<div class="text" style="-webkit-user-select:none">
+Click to attract the particle. Note that the passage of time is 50:1.
+<div style="position:absolute;top:800px;left:25px;width:270px;-webkit-user-select:none">
+<br>&#181;<sub>s</sub>: <input max=2 min=0 value=.5 step=.01 id="micros" type="number">
+&#181;<sub>k</sub>: <input max=2 min=0 value=.5 step=.01 id="microk" type="number">
+<br>Attract<sub>click</sub> (m/s<sup>2</sup>): <input min=0 max=500 value=6 id="k" type="number">
+<br>g (m/s<sup>2</sup>): <input min=0 max=50 value=10 id="g" type="number">
+<br>mass (kg): <input min=0 max=500 value=1 type="number">
+</div>
+<div style="position:absolute;top:800px;right:25px;width:270px;-webkit-user-select:none;cursor:default;font-size:18px">
+1. Which constant has no impact on how the particle moves? Pay attention to units!
+2. Click and hold in a direction perpendicular to the particle's current velocity. What motion do you notice?
+(Adjust constants for best result.)
+3. Derive an equation for the particle's acceleration vector.
+4. When does <span>&#181;</span><sub>s</sub> have no effect (an inequality) on how the particle moves?
+</div>
+<center>
+<span id="disp"></span>
+<span id="vel"></span>
+<canvas id="canvas" onmousedown="down(event)" onmousemove="move(event)" onmouseup="up()" height="500" width="500">Get Chrome...</canvas> 
+</center>
+</div>
+
+<script src="js/unit5.1.js"></script>
+</body>
+</html>

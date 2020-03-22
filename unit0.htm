@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><title>Unit 0</title>
+<link rel="stylesheet" href="css/math.css">
+<script src="js/jquery.js"></script>    
+    
+</head><body>
+
+<center id="h1">Unit 0: Symbols</center>
+<div class="h2">Definitions</div>    
+<div class="text">
+Non-derived quantity: no expression for definition, expressed in non-derived (basic) units
+<br>&#8594;x for distance/displacement, t for time, m for mass, etc.
+<br>Rate: expressed as division in definition
+<br>&#8594;v for velocity, a for acceleration, P for power, p for momentum, etc.
+<br>Derived quantity: expressed as multiplication in definition, usually a capital letter
+<br>&#8594;T for period, C for circumference, R for range, F for force, W for work, J for impulse, etc.
+<br>Overline:average (definite integral over x-interval)
+<br>i/o: initial, f/t: final/at given time 
+<br>&#916;: change in, =final-initial
+</div>
+
+<div class="h2">Scalar and Vector</div>
+<div class="text">
+Distance and speed are scalar. Displacement and velocity are vector. Scalars disregard direction and are the sum of the magnitudes
+(always positive, greater than or equal to vector), whereas vectors import both magnitude and orientation. If a plane travels from 
+London to Delhi and back, then its displacement is zero because the flight back is negative and cancels out the forward flight, but 
+the distance only adds on, no matter which direction. Its distance would simply be its mileage. If it flew in a perfectly straight 
+line, the distance would be twice the distance between the two cities. If it swerved left on one trip, it would have to swerve right 
+to reach its destination, adding onto its distance, but the sidetracking cancels out for displacement, which simply depends on final and initial.
+</div>
+
+<div class="h2">Lab</div>
+<div class="text">
+<progress id="grade" title="0/0" value="0"></progress><span id="result"></span>
+<br style="font-size:8px">As per convention, "left" and "down" vectors are negative and round your final answer to the nearest tenth, 5 rounding down.
+Answer at least 5 and score at least 90%.
+<br><span id="ques"></span>   
+<p>
+<input type="radio" name="ans" class=".padded" id="one" onclick="check(1)"></input><label for="one" id="lab1">A</label>
+<input type="radio" name="ans" class=".padded" id="two" onclick="check(2)"></input><label for="two" id="lab2">B</label>
+<input type="radio" name="ans" class=".padded" id="three" onclick="check(3)"></input><label for="three" id="lab3">C</label>
+<input type="radio" name="ans" class=".padded" id="four" onclick="check(4)"></input><label for="four" id="lab4">D</label>
+
+<br>
+</div>
+
+<script src="js/unit0.1.js"></script>
+</body>
+</html>

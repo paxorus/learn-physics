@@ -1,0 +1,185 @@
+<html><head><title>Personal Work Display</title>
+<link rel="stylesheet" href="css/math.css">
+</head><body>
+
+<center id="h1">Personal Work Display</center>
+
+<div class="h2">Proofs and Derivations</div>
+<div class="text" style="font-size:14px">
+Click to jump to a work!
+
+<p>Promising beginnings: I first started recording my thoughts in the margins of my math notebooks. Then I decided to dedicate a notebook to just these 
+ideas when one evening I grabbed a used notebook and brought it to a boring party to attempt the Binomial Theorem proof. I was unsuccessful. I derived 
+several trigonometric identities to use in class and attempted a Pythagorean triple generator (getting into Pell's equations) while trying to prove that 
+of a Pythagorean triple, one is always divisible by 3, one by 4, and one by 5. I wrote a paper on paradoxes for statistics. I made the Punnett shortcut 
+for biology class. Precalculus (and the teacher's lack of comprehension) inspired my recursives formula and analysis of infinity. I used the rotation 
+matrix transformation and others to angle parabolas, but a month later my exact processes and discoveries showed up in the regular curriculum. Although 
+it was one of my proudest and most successful discoveries, I don't need to upload it because it can be found in any calculus BC book. I tragically lost 
+my first two notebooks, so the above is from memory.
+<br>
+<br><span onclick="window.open('#pyth','_self')">Pythagorean triples</span>
+<br><span onclick="window.open('https://docs.google.com/file/d/1YiRculWpT2kEQ8mcgsQxj70IpR1feRfg1YJoq-C8lMbJCsRwTwAnnycwc0jL/edit','_newtab')">Paper on Paradoxes: Statistics, Probability, and Utility Theory</span>
+<br><span onclick="window.open('#pun','_self')">Punnett bypass</span>
+<br><span onclick="window.open('#rec','_self')">Recursives</span>
+<br><span onclick="window.open('#cor','_self')">|r|<span>&#60;1</span></span>
+<br><span onclick="window.open('#rad','_self')">Nested radicals</span>
+
+<p>Rougher tides: In 12th grade, I attempted the Rubik's cube and was successful until the third layer. I began messing around with derivative proofs 
+while trying a few longer term projects: crushing a hemisphere, my triangle puzzle, a manual factor to graph intervals, followed by a long line of 
+failures. I began the points-to-curve algorithm for the physics mousetrap lab and finding the bond angle of MX4 for chemistry. At some point I became
+fascinated with e and ln(x) and proved all of the formulas that had shown up in calculus.
+<br><span onclick="window.open('#flat','_self')">Crushing a hemisphere</span>
+<br><span onclick="window.open('#puzzle','_self')">Inscribed circle puzzle</span>
+<br><span onclick="window.open('#imag','_self')">Function on an interval</span>
+<br><span onclick="window.open('#mx4','_self')">MX4 in chemistry</span>
+<br><span onclick="window.open('#lee','_self')">Locate the error</span>
+
+<p>A comeback: I compared area and volume formulas, stumbled upon fractional calculus, and worked out algorithms to simplify cosine and sine. A friend 
+presented me with a Java program he had been trying to write for years, and by the end of the day I had four different solutions. I am now programming 
+my points-to-curve algorithm while playing around with a cubic equation solver and proving rotational inertia formulas from physics, quite possibly
+returning to the Binomial Theorem.
+<br><span onclick="window.open('#geo','_self')">Cross-dimensional analysis</span>
+<br><span onclick="window.open('#sin','_self')">Simplifying cosine/sine</span>
+<br><span onclick="window.open('#frag','_self')">Fragmentizer in Java</span>
+<br><span onclick="window.open('#dnp','_self')">Double negatives proof</span>
+<br><span onclick="window.open('#cns','_self')">Computer number systems</span>
+<br><span onclick="window.open('https://c9.io/paxorus/formula/workspace/main.html','_newtab')">Points to curve</span>
+</div>
+
+
+
+<div class="h2" id="pyth">Pythagorean Triples</div>
+<div class="text">
+My actual intention was to generate all possible Pythagorean triples, but I made the faulty assumption that for all base triples, the hypotenuse and
+longer leg differed by only 1 or 2. Although the below does not account for all base triples, it still produces a triple for any shorter leg length x.
+<br><br>The key was to notice that any odd number is the difference of two consecutive perfect squares. Of these odd numbers, the perfect squares
+and their corresponding difference of squares will form a triple. Call the consecutive squares y<sup>2</sup> and (y+1)<sup>2</sup>, and the chosen
+odd square x<sup>2</sup>. We know x<sup>2</sup>+y<sup>2</sup>=(y+1)<sup>2</sup>, thus x<sup>2</sup>=2y+1. How about choosing x to be even?
+Now the key is to note that the differences of the squares of some y<sup>2</sup> and (y+2)<sup>2</sup> form a sequence of multiples of 4. Of these
+even numbers, all the even perfect squares occur in the sequence so as above, x<sup>2</sup>+y<sup>2</sup>=(y+2)<sup>2</sup>, thus x<sup>2</sup>=4y+4.
+So I had a function for the longer leg y in terms of the shorter leg x, depending on whether x was odd or even. I ran into Pell's equation when I
+set the expressions for y equal after noticing that an even x and an odd x could produce the same y. For example, 7 and 10 both generated y=24.
+    
+</div>
+
+<div class="h2" id="cor">The Reason Behind |r|<span>&#60;1</span></div>
+<div class="text">
+Infinity is undoubtedly one of the most recurring concepts in mathematics. It has its own genre of paradoxes; 
+Galileo's paradox, Zeno's paradox, Hilbert's Hotel, and even the von Neumann paradox only scratched the surface of its wonder. 
+In the Banach-Tarski paradox, a sphere is disassembled and reassembled into two spheres, each congruent to the original, using only simple rotations and translations! 
+Here is a quick proof of the infinite sum <span>&#931;</span> of a geometric series equaling a<sub>1</sub>/(1-r).
+<br>a<sub>1</sub>+a<sub>2</sub>+a<sub>3</sub>+...=<span>&#931;</span>
+<br>a<sub>1</sub>+a<sub>1</sub>r+a<sub>1</sub>r^2+...=<span>&#931;</span>
+<br>a<sub>1</sub>r+a<sub>1</sub>r^2+...=<span>&#931;</span>*r
+<br>(a<sub>1</sub>+a<sub>1</sub>r+a<sub>1</sub>r^2+...)-(a<sub>1</sub>r+a<sub>1</sub>r^2+a<sub>1</sub>r^3...)=<span>&#931;-</span>&#931;*r
+<br>a<sub>1</sub>=<span>&#931;-</span>&#931;*r
+<br>a<sub>1</sub>=<span>&#931;</span>*(1-r)
+<br>&#931;=a<sub>1</sub>/(1-r)
+<br>Unfortunately, there's a restriction:|r|<span>&#60;</span>1. Does it make sense graphically? Let a<sub>1</sub>=6 arbitrarily and <span>&#931;</span> be a function of r.
+f(r)=6/(1-r) is a hyperbola. 
+We know the following: If r<span>&#8805;</span>1, the sum should diverge. 
+If 1<span>&#60;</span>|r|<span>&#60;</span>0, the sum of the series should converge.
+If r=0, <span>&#931;</span>=a<sub>1</sub>.
+If r<span>&#8804;</span>-1, the series will alternate between positive and negative terms, diverging.
+Instead the hyperbola only matches on the interval (-1,1).  
+<br><br>So what assumption did we make during our proof that limited the equation<span>&#39;</span>s domain to (-1,1)?
+In order for proper term-by-term subtraction, both expressions need to have the same number of terms, so if a<sub>1</sub> is left over, a term from the other expression must remain as well!
+This idea that n-1=n where n is an infinite number is the basis of many paradoxes, including the famous Banach-Tarski. 
+This however is not entirely true, and we can observe this here, at the very source of the mystery. When we subtract, we really get a<sub>1</sub>-a<sub>n</sub>. 
+That is, the true formula is <span>&#931;</span>=(a<sub>1</sub>-a<sub>n</sub>)/(1-r).
+The assumption is made here: a<sub>n</sub>, which is a<sub>1</sub>r<sup>n-1</sup>, is mathematically irrelevant and equal to its limit zero. 
+This leads to amazing results like .99999...=1 exactly, because 0.0000...1 is equal to exactly zero. If |r|<span>&#60;</span>1, then a<sub>n</sub> is indeed mathematically irrelevant. 
+However if |r|>1, then a<sub>n</sub> is extremely large and a<sub>1</sub> is in fact mathematically irrelevant! 
+Better yet, if r=-1, the two expressions cancel in an alternating fashion and the sum is zero. (This techniaclly violates the nth term test.)
+Lastly, you might be tempted to say that if r=1, the expressions cancel exactly and the sum is therefore zero...but be wary of the right side!
+<span>&#931;</span>-<span>&#931;</span>*r=0 as well. There are many ways to show that 1+1+1+... is an infinite number.
+
+<br><br>A final note: Infinity is not a number but a condition that can be approached. 
+The numbers that satisfy this condition are called the infinite numbers (plural). You cannot have infinity of something; you can only have an infinite number of something. 
+One could all of mathematics by redefining real numbers to include the infinite numbers, each in terms of the limit of 1/x as x<span>&#8594;</span>0 to equal one "infinite unit", or <span>&#8733;</span>. 
+For example, the limit of 5/x as x<span>&#8594;</span>0 would be 5<span>&#8733;</span>. The importance lies in retaining information, because of the coefficient and a standard base. 
+If after some long derivation, the answer comes out to be <span>&#8734;</span>, this can't be compared to other results. 
+The current solution is the b-method, but the limit is limiting (no pun intended) because of the sheer uselessness when this limit comes out to <span>&#177;</span>&#8734; itself.
+One thing worth investigating is applications of problems where two infinite series of lengths x and y terms (respectively) are added to each other and then contrasted with a series of length x+y.
+And of course, there is no shortage of problems that to be reconsidered once convergence is redefined...    
+</div>
+
+<div class="h2" id="rad">Nested Radicals Formula</div>
+<div class="text">
+Let š(x) signify the square root of x. Given an expression in the form š(a+š(b)) and that a^2-b is a perfect square, the expression can be rewritten without nested radicals as:
+š(a+š(a^2-b))/š(2)+š(a-š(a^2-b))/š(2). That is, calculate some variable p=a^2-b and then š(a+š(b)) = š(a+š(p))/š(2)+š(a-š(p))/š(2). I developed this when I found š(2+š(3))/2 to be irksome after using the cosine half-angle formula to find cos(pi/12)- which, by the way, reduces to (š(2)+š(6))/4.
+...Coming Soon: š(a-š(b)) for sine
+</div>
+
+<div class="h2" id="puzzle">Inscribed Circle Puzzle</div>
+<div class="text">
+<img src="tripuzzle.png" style="float:left">I invented this puzzle to show that a little prudence and cleverness can cut down on a lot of algebra.
+A right triangle has leg lengths 5 and 12. Find r, the radius of the inscribed circle. 
+<br><br>A running total of three possible solutions besides mine: 1) coordinate geometry, 2) (used by 3 different students) a crazy memorized formula 
+from some random high-level mathematics book (r=ab/(a+b+c)), and 3) fragment the triangle into three triangles each with one of the original triangle's 
+edges as the base and a radius as the height. My almighty method? Notice three blue, deltoid-shaped regions. The straight edges of each region are equal. 
+The smallest has edges of length r. The second largest has edges of length (5-r). The largest has edges of length (12-r). The second largest and largest deltoids each have an edge that lines up to form the hypotenuse, of length 13. 
+Here comes the math: (5-r)+(12-r)=13. -2r=-4. r=2. My method is currently the fastest. Coordinate geometry is currently the slowest.
+</div>
+
+<div class="h2" id="lee">Locate the Error</div> 
+<div class="text">
+a=b
+<br>a-1=b-1
+<br>a(a-1)=b(b-1)
+<br>a^2-a=b^2-b
+<br>a^2-a+1/4=b^2-b+1/4
+<br>(a-1/2)^2=(b-1/2)^2
+<br>a-1/2=+/- (b-1/2)
+<br>a-1/2=b-1/2
+<br>a=b
+<br>a-1/2=-b+1/2
+<br>a=-b+1
+<br>a+b=1
+<br>a+a=1
+<br>2a=1
+<br>a=1/2
+<br>1/2+b=1
+<br>b=1/2
+Thus, if (a=b) {a=1/2, b=1/2}
+...Locate the error!
+</div>
+
+<div class="h2" id="dnp">Double Negatives Proof</div> 
+<div class="text">
+What is the shortest proof for (Given: null) {Prove: 1=-(-1)} using the least derived laws? I have no idea, but my best attempt is below. You could say I
+cheated by not writing a true statement on the side and then substituting it into the main equation and at step 7 
+<table>
+<tr><td></td><td>Statements</td><td>Reasons</td></tr>
+<tr><td>1</td><td>1+-1=0</td><td>property of opposites</td></tr>
+<tr><td>2</td><td>1-1=0</td><td>definition of subtraction</td></tr>
+<tr><td>3</td><td>1+-1-(-1)=0-(-1)</td><td>subtraction property of equality</td></tr>
+<tr><td>4</td><td>1+-1(1-1)=0-(-1)</td><td>distributive property</td></tr>
+<tr><td>5</td><td>1+-1(0)=0-(-1)</td><td>substitution (2,4)</td></tr>
+<tr><td>6</td><td>1+0=0-(-1)</td><td>multiplicative property of zero</td></tr>
+<tr><td>7</td><td>1+0=0+-(-1)</td><td>definition of subtraction</td></tr>
+<tr><td>8</td><td>1=-(-1)</td><td>additive identity</td></tr>
+</table>
+</div>
+
+<div class="h2" id="cns">Computer Number Systems</div>
+<div class="text">These are part of the computer science club curriculum at Acton-Boxborough because the ACSL requires it. 
+The universal number system is decimal, which is in fact rather arbitrary. It seems that base 8 would have been a much better choice. 
+The curriculum concerns only four different number systems: binary (base 2), octal (base 8), decimal (base 10), and hexadecimal. 
+This is listed here because I found and proved a shortcut to convert between binary, octal, and hexadecimal without turning to decimal. 
+I derived basic properties of each system and found each to be self-sustaining with slightly different mechanisms for arithmetic. 
+In other words, having chosen 8 over 10 all those years back would not have complicated the way in which we add, multiply, take the log of, etc.
+For base n, there are n digits: 0 to n-1. For binary this means just 0s and 1s. For octal, it's 0 to 7. 
+For hexadecimal, we have to invent new digits to symbolize the extra six, and the consensus is the following: 0 1 2 3 4 5 6 7 8 9 A B C D E F. 
+Looking at a number system individually, the basic idea is that as you count, you add to the rightmost digit before the decimal point ("decimal point" is just a name not particularly affiliated with base 10-it keeps its name in any base just for the sake of simplicity) and every place that equals or exceeds the base carries a number over. 
+In binary, we begin with 1. We add 1 and get 2, but 2 is never a possible digit in a binary number so we carry it over and write 10...then 11...then carry over and get 100...101, 110, 111, 1000. 
+Looking at a number system relative to decimal, each place (for base 10: ones place, tens place, hundreds, etc.) signifies the base to a certain power. 
+For decimal the ones place signifies 10^0. The next is 10^1, and then 10^2, then 10^3, and so on. In binary it goes 2^0, 2^1, 2^2...
+<br><br>Let's practice with binary-decimal conversions.
+Take 7 in decimal. We break it down into 1(2^2)+1(2^1)+1(2^0)=111.
+Take 34. The largest power of 2 we can grab is 32, and we break it down from there. 1(2^5) leaves 2. We don't have any 16's, 8's, or 4's, so those three places are zeroes. We have a 2 so we write 1 at that place. We don't have any 1's (obvious conclusion, since we began with an even number) so this place is 0. We have
+1(2^5)+0(2^4)+0(2^3)+0(2^2)+1(2^1)+0(2^0)-->100010. Note we could also stick terms onto the beginning and express 34 as 0(2^10)+0(2^9)+0(2^8)+0(2^7)+0(2^6)+1(2^5)+0(2^4)+0(2^3)+0(2^2)+1(2^1)+0(2^0)-->00000100010, but that's like writing 5 in decimal as 00000000000000000000000000005 or 05. Those leading zeroes serve no purpose.
+Take 1023. I can already see that it is 1 short of 1024, which 2^10, so I can quickly say that's 10 1's.
+</div>
+
+</body></html>
